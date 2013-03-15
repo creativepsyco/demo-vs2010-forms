@@ -11,6 +11,7 @@ public:
 	ArrayList^ GetData();
 	bool StoreData(String^ s);
 	static DataStorage^ GetInstance();
+	int GetMessage();
 private:
 	static DataStorage^ myInstance;
 };

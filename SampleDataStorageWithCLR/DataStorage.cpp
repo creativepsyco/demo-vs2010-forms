@@ -59,3 +59,8 @@ DataStorage^ DataStorage::GetInstance()
 		return myInstance;
 	}
 }
+
+int DataStorage::GetMessage()
+{
+	return 1;
+}
