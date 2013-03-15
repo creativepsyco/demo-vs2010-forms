@@ -41,6 +41,8 @@ namespace SampleDataStorageWithCLR {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  btnLoad;
 	private: System::Windows::Forms::Button^  btnSave;
+	private: System::Windows::Forms::CheckBox^  checkBox1;
+	private: System::Windows::Forms::CheckBox^  checkBox2;
 
 	private:
 		/// <summary>
@@ -60,6 +62,8 @@ namespace SampleDataStorageWithCLR {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnLoad = (gcnew System::Windows::Forms::Button());
 			this->btnSave = (gcnew System::Windows::Forms::Button());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->SuspendLayout();
 			// 
 			// richTextBox1
@@ -107,11 +111,37 @@ namespace SampleDataStorageWithCLR {
 			this->btnSave->UseVisualStyleBackColor = true;
 			this->btnSave->Click += gcnew System::EventHandler(this, &Form1::btnSave_Click);
 			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(346, 260);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(80, 17);
+			this->checkBox1->TabIndex = 5;
+			this->checkBox1->Tag = L"1";
+			this->checkBox1->Text = L"checkBox1";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
+			// 
+			// checkBox2
+			// 
+			this->checkBox2->AutoSize = true;
+			this->checkBox2->Location = System::Drawing::Point(346, 284);
+			this->checkBox2->Name = L"checkBox2";
+			this->checkBox2->Size = System::Drawing::Size(80, 17);
+			this->checkBox2->TabIndex = 6;
+			this->checkBox2->Tag = L"2";
+			this->checkBox2->Text = L"checkBox2";
+			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox2->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(523, 345);
+			this->Controls->Add(this->checkBox2);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->btnSave);
 			this->Controls->Add(this->btnLoad);
 			this->Controls->Add(this->label1);
@@ -125,6 +155,16 @@ namespace SampleDataStorageWithCLR {
 		}
 #pragma endregion
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+				 CheckBox^ s = dynamic_cast<CheckBox^>(sender);
+				 if (s->Tag == 1)
+				 {
+					 richTextBox1->Text = "I am First";
+				 }
+				 else
+				 {
+					 richTextBox1->Text = "I am second";
+				 }
+
 			 }
 	private: System::Void btnLoad_Click(System::Object^  sender, System::EventArgs^  e) {
 				 richTextBox1->Text = "";

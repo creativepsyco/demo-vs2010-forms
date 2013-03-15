@@ -22,6 +22,11 @@ ArrayList^ DataStorage::GetData()
 		case XmlNodeType::Element: // The node is an element.
 			Console::Write("<{0}", reader->Name);
 			Console::WriteLine(">");
+			if (reader->Name == "name")
+			{
+				reader->Read(); // text
+				reader->Read();
+			}
 			break;
 		case XmlNodeType::Text: //Display the text in each element.
 			s= reader->Value;

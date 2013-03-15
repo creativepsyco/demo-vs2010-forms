@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <objects>
-  <object>Object 1</object>
-  <object>Object 2</object>
+  <object>
+    <name id="1">OBject 1</name>
+    <desc>This is Object 1</desc>
+  </object>
 </objects>
